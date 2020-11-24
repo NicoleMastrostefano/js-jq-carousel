@@ -25,25 +25,19 @@ $(document).ready(
       }
     }
   );
-})
-//   $(".fa-circle").click(
-//     function() {
-//       $(this).addClass("active");
-//       if (true) {
-//       prevImage();
-//     }
-//   });
-//
-//   $(".fa-circle").click(
-//     function() {
-//       var circleClicked = $(".fa-circle.active");
-//       if (circleClicked == true) {
-//         nextImage()
-//       }
-//       console.log(event);
-//     }
-//   );
-// });
+
+  $(".fa-circle").click(
+    function() {
+      faCircle();
+      var dotIndex = $(this).index();
+      var images = $(".images img");
+      $(this).addClass("active");
+      $(images[dotIndex]).addClass("active");
+    }
+  );
+  }
+);
+
 
   function nextImage(){
     var activeImage= $(".images img.active");
@@ -74,4 +68,11 @@ $(document).ready(
       activeImage.prev().addClass("active");
       activeDot.prev().addClass("active");
     }
+  }
+
+  function faCircle () {
+    var activeImage = $(".images img.active");
+    var activeDot = $(".nav i.active");
+    activeImage.removeClass("active");
+    activeDot.removeClass("active");
   }
