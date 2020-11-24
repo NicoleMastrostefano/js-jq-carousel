@@ -25,7 +25,7 @@ $(document).ready(
       }
     }
   );
-
+})
 //   $(".fa-circle").click(
 //     function() {
 //       $(this).addClass("active");
